@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     }
     
     @objc private func nextScreen() {
-        let storyboard 
+        let storyboard = UIStoryboard.init(name: "Task1VC", bundle: Bundle.main)
+        let vc = storyboard.instantiateInitialViewController() as! Task1VC
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 
 

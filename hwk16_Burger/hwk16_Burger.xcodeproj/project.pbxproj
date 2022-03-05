@@ -15,6 +15,7 @@
 		6784600627D3C49C00A028EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6784600427D3C49C00A028EB /* LaunchScreen.storyboard */; };
 		67B682F527D3E83500DC06A2 /* UIButton+taskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B682F427D3E83400DC06A2 /* UIButton+taskButton.swift */; };
 		67B682F727D3F65600DC06A2 /* Task1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B682F627D3F65600DC06A2 /* Task1VC.swift */; };
+		67B682F927D3F82800DC06A2 /* Task1VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67B682F827D3F82800DC06A2 /* Task1VC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6784600727D3C49C00A028EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B682F427D3E83400DC06A2 /* UIButton+taskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+taskButton.swift"; sourceTree = "<group>"; };
 		67B682F627D3F65600DC06A2 /* Task1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1VC.swift; sourceTree = "<group>"; };
+		67B682F827D3F82800DC06A2 /* Task1VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task1VC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,6 @@
 		67845FED27D3C49B00A028EB = {
 			isa = PBXGroup;
 			children = (
-				67B682F627D3F65600DC06A2 /* Task1VC.swift */,
 				67845FF827D3C49B00A028EB /* hwk16_Burger */,
 				67845FF727D3C49B00A028EB /* Products */,
 			);
@@ -64,6 +65,7 @@
 				67845FF927D3C49B00A028EB /* AppDelegate.swift */,
 				67845FFB27D3C49B00A028EB /* SceneDelegate.swift */,
 				67B682F427D3E83400DC06A2 /* UIButton+taskButton.swift */,
+				67B682FA27D3F83A00DC06A2 /* Task1VC */,
 				67845FFD27D3C49B00A028EB /* ViewController.swift */,
 				67845FFF27D3C49B00A028EB /* Main.storyboard */,
 				6784600227D3C49C00A028EB /* Assets.xcassets */,
@@ -71,6 +73,15 @@
 				6784600727D3C49C00A028EB /* Info.plist */,
 			);
 			path = hwk16_Burger;
+			sourceTree = "<group>";
+		};
+		67B682FA27D3F83A00DC06A2 /* Task1VC */ = {
+			isa = PBXGroup;
+			children = (
+				67B682F627D3F65600DC06A2 /* Task1VC.swift */,
+				67B682F827D3F82800DC06A2 /* Task1VC.storyboard */,
+			);
+			path = Task1VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +144,7 @@
 			files = (
 				6784600627D3C49C00A028EB /* LaunchScreen.storyboard in Resources */,
 				6784600327D3C49C00A028EB /* Assets.xcassets in Resources */,
+				67B682F927D3F82800DC06A2 /* Task1VC.storyboard in Resources */,
 				6784600127D3C49B00A028EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
