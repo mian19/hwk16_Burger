@@ -26,7 +26,7 @@ extension UIButton {
         button.setImage(UIImage(named: "burger_off"), for: .normal)
         return button
     }
-    
+
     static func burgerItemButton (label: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = .blue

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         button = UIButton.taskButton()
         view.addSubview(button)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         button.addTarget(self, action: #selector(nextScreen), for: .touchUpInside)
@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
-
-
+    
 }
 

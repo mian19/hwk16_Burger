@@ -31,6 +31,7 @@ class Task1VC: UIViewController {
         view.addSubview(imView)
         view.addSubview(burgerButton)
     }
+    
     override func viewWillLayoutSubviews() {
         setElements()
     }
@@ -63,8 +64,8 @@ class Task1VC: UIViewController {
     }
     
     private func addAlertButton() {
-        var alert1Button = UIButton.burgerItemButton(label: "alert 1")
-        var alert2Button = UIButton.burgerItemButton(label: "alert 2")
+        let alert1Button = UIButton.burgerItemButton(label: "alert 1")
+        let alert2Button = UIButton.burgerItemButton(label: "alert 2")
         let backButton = UIButton.burgerItemButton(label: "to main")
         
         burgerView.addSubview(alert1Button)
@@ -78,8 +79,6 @@ class Task1VC: UIViewController {
         alert1Button.addTarget(self, action: #selector(showAlert1), for: .touchUpInside)
         alert2Button.addTarget(self, action: #selector(showAlert2), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(toMain), for: .touchUpInside)
-        
- 
     }
     
     @objc private func showBurgerView() {
@@ -121,11 +120,4 @@ class Task1VC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-
-    
-
-    
-    
-
-
 }
