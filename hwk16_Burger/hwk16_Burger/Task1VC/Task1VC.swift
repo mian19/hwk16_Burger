@@ -51,13 +51,38 @@ class Task1VC: UIViewController {
             imView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
+    }
+    
+    private func createBurgerView() -> UIView{
+        let bView = UIView()
+        bView.backgroundColor = .systemYellow
+        bView.layer.cornerRadius = 25
+        bView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
+       
+        
+        return bView
+    }
+    
+    private func addAlertButton() {
+        let alert1Button = UIButton.burgerItemButton(label: "alert 1")
+        let alert2Button = UIButton.burgerItemButton(label: "alert 2")
+        let backButton = UIButton.burgerItemButton(label: "to main")
+        
+        burgerView.addSubview(alert1Button)
+        burgerView.addSubview(alert2Button)
+        burgerView.addSubview(backButton)
+        
+        alert2Button.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY)
+        alert1Button.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY-50)
+        backButton.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY+50)
     }
     
     @objc private func showBurgerView() {
         if isBurgerHidden {
             view.insertSubview(burgerView, belowSubview: burgerButton)
             burgerView.frame = CGRect(origin: CGPoint(x: 0 - view.frame.width * 0.4, y: view.safeAreaLayoutGuide.layoutFrame.minY) , size: CGSize(width: view.frame.width * 0.4, height: view.safeAreaLayoutGuide.layoutFrame.size.height))
+            addAlertButton()
             self.burgerButton.setImage(UIImage(named: "burger_on"), for: .normal)
             UIView.animate(withDuration: 1, animations: {
                 self.burgerView.frame.origin = CGPoint(x: self.view.safeAreaLayoutGuide.layoutFrame.minX, y: self.view.safeAreaLayoutGuide.layoutFrame.minY)
@@ -80,13 +105,7 @@ class Task1VC: UIViewController {
         self.isBurgerHidden.toggle()
     }
     
-    private func createBurgerView() -> UIView{
-        var bView = UIView()
-        bView.backgroundColor = .systemYellow
-        bView.layer.cornerRadius = 25
-        bView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        return bView
-    }
+
     
 
     

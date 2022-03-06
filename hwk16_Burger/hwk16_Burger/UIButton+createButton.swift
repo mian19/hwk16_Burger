@@ -22,9 +22,20 @@ extension UIButton {
     
     static func burgerButton () -> UIButton {
         let button = UIButton()
-        
         button.frame.size = CGSize(width: 30, height: 30)
         button.setImage(UIImage(named: "burger_off"), for: .normal)
+        return button
+    }
+    
+
+    
+    static func burgerItemButton (label: String) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.frame.size = CGSize(width: 60, height: 30)
+        button.titleLabel!.font = UIFont(name: "System", size: 15)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle(label, for: .normal)
         return button
     }
     
