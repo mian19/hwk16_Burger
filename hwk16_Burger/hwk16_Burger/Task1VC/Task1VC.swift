@@ -8,22 +8,65 @@
 import UIKit
 
 class Task1VC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private var isBurgerHidden = true
+    private var burgerButton = UIButton()
+    private var imView: UIImageView!
+    
+    override func loadView() {
+        let customView = UIView(frame: UIScreen.main.bounds)
+        customView.backgroundColor = .white
+        view = customView
+        imView = UIImageView(image: UIImage(named: "swift"))
+        
+        burgerButton = UIButton.burgerButton()
+        burgerButton.addTarget(self, action: #selector(showBurgerView), for: .touchUpInside)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        burgerButton.center = view.center
+        view.addSubview(imView)
+        view.addSubview(burgerButton)
     }
-    */
+    override func viewWillLayoutSubviews() {
+        setElements()
+    }
+    
+    
+    
+    @objc private func showBurgerView() {
+        if isBurgerHidden {
+            self.burgerButton.setImage(UIImage(named: "burger_on"), for: .normal)
+            UIView.animate(withDuration: 2, animations: {
+                
+            })
+            
+        } else {
+            self.burgerButton.setImage(UIImage(named: "burger_off"), for: .normal)
+            UIView.animate(withDuration: 2, animations: {
+            
+            })
+            
+        }
+        isBurgerHidden.toggle()
+    }
+    
+    private func setElements() {
+        imView.translatesAutoresizingMaskIntoConstraints = false
+        burgerButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            burgerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            burgerButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            burgerButton.widthAnchor.constraint(equalToConstant: burgerButton.frame.width),
+            burgerButton.heightAnchor.constraint(equalToConstant: burgerButton.frame.height),
+            
+            imView.widthAnchor.constraint(equalTo: view.widthAnchor ),
+            imView.heightAnchor.constraint(equalToConstant: 400),
+            imView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+
 
 }

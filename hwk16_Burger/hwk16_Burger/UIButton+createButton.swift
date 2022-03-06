@@ -11,12 +11,20 @@ import UIKit
 extension UIButton {
     
    static func taskButton () -> UIButton {
-        let button = UIButton()
+       let button = UIButton()
        button.backgroundColor = .blue
-        button.frame.size = CGSize(width: 150, height: 80)
+       button.frame.size = CGSize(width: 150, height: 80)
        button.setTitle("Task 1", for: .normal)
        button.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 45)
        button.setTitleColor(.white, for: .normal)
+       return button
+   }
+    
+    static func burgerButton () -> UIButton {
+        let button = UIButton()
+        
+        button.frame.size = CGSize(width: 50, height: 50)
+        button.setImage(UIImage(named: "burger_off"), for: .normal)
         return button
     }
     
