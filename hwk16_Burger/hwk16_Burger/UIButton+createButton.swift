@@ -23,7 +23,7 @@ extension UIButton {
     static func burgerButton () -> UIButton {
         let button = UIButton()
         
-        button.frame.size = CGSize(width: 50, height: 50)
+        button.frame.size = CGSize(width: 30, height: 30)
         button.setImage(UIImage(named: "burger_off"), for: .normal)
         return button
     }
