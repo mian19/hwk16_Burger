@@ -25,7 +25,6 @@ class Task1VC: UIViewController {
         burgerView = createBurgerView()
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         burgerButton.center = view.center
@@ -34,7 +33,6 @@ class Task1VC: UIViewController {
     }
     override func viewWillLayoutSubviews() {
         setElements()
-  
     }
     
     private func setElements() {
@@ -58,15 +56,15 @@ class Task1VC: UIViewController {
         bView.backgroundColor = .systemYellow
         bView.layer.cornerRadius = 25
         bView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        
-       
-        
+        let swipeToLeft = UISwipeGestureRecognizer(target: self, action: #selector(showBurgerView))
+        swipeToLeft.direction = .left
+        bView.addGestureRecognizer(swipeToLeft)
         return bView
     }
     
     private func addAlertButton() {
-        let alert1Button = UIButton.burgerItemButton(label: "alert 1")
-        let alert2Button = UIButton.burgerItemButton(label: "alert 2")
+        var alert1Button = UIButton.burgerItemButton(label: "alert 1")
+        var alert2Button = UIButton.burgerItemButton(label: "alert 2")
         let backButton = UIButton.burgerItemButton(label: "to main")
         
         burgerView.addSubview(alert1Button)
@@ -76,6 +74,12 @@ class Task1VC: UIViewController {
         alert2Button.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY)
         alert1Button.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY-50)
         backButton.center = CGPoint(x: burgerView.bounds.midX, y: burgerView.bounds.midY+50)
+        
+        alert1Button.addTarget(self, action: #selector(showAlert1), for: .touchUpInside)
+        alert2Button.addTarget(self, action: #selector(showAlert2), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(toMain), for: .touchUpInside)
+        
+ 
     }
     
     @objc private func showBurgerView() {
@@ -84,25 +88,37 @@ class Task1VC: UIViewController {
             burgerView.frame = CGRect(origin: CGPoint(x: 0 - view.frame.width * 0.4, y: view.safeAreaLayoutGuide.layoutFrame.minY) , size: CGSize(width: view.frame.width * 0.4, height: view.safeAreaLayoutGuide.layoutFrame.size.height))
             addAlertButton()
             self.burgerButton.setImage(UIImage(named: "burger_on"), for: .normal)
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0.75, animations: {
                 self.burgerView.frame.origin = CGPoint(x: self.view.safeAreaLayoutGuide.layoutFrame.minX, y: self.view.safeAreaLayoutGuide.layoutFrame.minY)
                 self.burgerButton.isUserInteractionEnabled = false
             }, completion: {_ in
                 self.burgerButton.isUserInteractionEnabled = true
             })
-            
         } else {
             self.burgerButton.setImage(UIImage(named: "burger_off"), for: .normal)
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0.75, animations: {
                 self.burgerView.frame.origin = CGPoint(x: 0 - self.view.frame.width * 0.4, y: self.view.safeAreaLayoutGuide.layoutFrame.minY)
                 self.burgerButton.isUserInteractionEnabled = false
             }, completion: {_ in
                 self.burgerView.removeFromSuperview()
                 self.burgerButton.isUserInteractionEnabled = true
-                
             } )
         }
         self.isBurgerHidden.toggle()
+    }
+    
+    @objc func showAlert1(buttons: Int) {
+        let alert = UIViewController.addAlert(numberOfButtons: 1)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func showAlert2(buttons: Int) {
+        let alert = UIViewController.addAlert(numberOfButtons: 2)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func toMain() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 

@@ -16,6 +16,7 @@
 		67B682F527D3E83500DC06A2 /* UIButton+createButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B682F427D3E83400DC06A2 /* UIButton+createButton.swift */; };
 		67B682F727D3F65600DC06A2 /* Task1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B682F627D3F65600DC06A2 /* Task1VC.swift */; };
 		67B682F927D3F82800DC06A2 /* Task1VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67B682F827D3F82800DC06A2 /* Task1VC.storyboard */; };
+		67C600BE27D4D6D00059DD05 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C600BD27D4D6D00059DD05 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		67B682F427D3E83400DC06A2 /* UIButton+createButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+createButton.swift"; sourceTree = "<group>"; };
 		67B682F627D3F65600DC06A2 /* Task1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1VC.swift; sourceTree = "<group>"; };
 		67B682F827D3F82800DC06A2 /* Task1VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task1VC.storyboard; sourceTree = "<group>"; };
+		67C600BD27D4D6D00059DD05 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				67845FF927D3C49B00A028EB /* AppDelegate.swift */,
 				67845FFB27D3C49B00A028EB /* SceneDelegate.swift */,
 				67B682F427D3E83400DC06A2 /* UIButton+createButton.swift */,
+				67C600BD27D4D6D00059DD05 /* UIViewController+Alert.swift */,
 				67B682FA27D3F83A00DC06A2 /* Task1VC */,
 				67845FFD27D3C49B00A028EB /* ViewController.swift */,
 				67845FFF27D3C49B00A028EB /* Main.storyboard */,
@@ -159,6 +162,7 @@
 				67B682F527D3E83500DC06A2 /* UIButton+createButton.swift in Sources */,
 				67845FFE27D3C49B00A028EB /* ViewController.swift in Sources */,
 				67845FFA27D3C49B00A028EB /* AppDelegate.swift in Sources */,
+				67C600BE27D4D6D00059DD05 /* UIViewController+Alert.swift in Sources */,
 				67845FFC27D3C49B00A028EB /* SceneDelegate.swift in Sources */,
 				67B682F727D3F65600DC06A2 /* Task1VC.swift in Sources */,
 			);

@@ -27,13 +27,11 @@ extension UIButton {
         return button
     }
     
-
-    
     static func burgerItemButton (label: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = .blue
-        button.frame.size = CGSize(width: 60, height: 30)
-        button.titleLabel!.font = UIFont(name: "System", size: 15)
+        button.frame.size = CGSize(width: 90, height: 40)
+        button.titleLabel!.font = UIFont(name: "System", size: 25)
         button.setTitleColor(.white, for: .normal)
         button.setTitle(label, for: .normal)
         return button
