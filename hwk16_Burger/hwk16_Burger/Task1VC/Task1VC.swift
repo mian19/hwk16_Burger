@@ -12,6 +12,7 @@ class Task1VC: UIViewController {
     private var burgerButton = UIButton()
     private var imView: UIImageView!
     private var burgerView: UIView!
+    private var blurView: UIVisualEffectView!
     
     override func loadView() {
         let customView = UIView(frame: UIScreen.main.bounds)
@@ -81,11 +82,20 @@ class Task1VC: UIViewController {
         backButton.addTarget(self, action: #selector(toMain), for: .touchUpInside)
     }
     
+    private func addBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(blurView, belowSubview: burgerView)
+    }
+    
     @objc private func showBurgerView() {
         if isBurgerHidden {
             view.insertSubview(burgerView, belowSubview: burgerButton)
             burgerView.frame = CGRect(origin: CGPoint(x: 0 - view.frame.width * 0.4, y: view.safeAreaLayoutGuide.layoutFrame.minY) , size: CGSize(width: view.frame.width * 0.4, height: view.safeAreaLayoutGuide.layoutFrame.size.height))
             addAlertButton()
+            addBlurEffect()
             self.burgerButton.setImage(UIImage(named: "burger_on"), for: .normal)
             UIView.animate(withDuration: 0.75, animations: {
                 self.burgerView.frame.origin = CGPoint(x: self.view.safeAreaLayoutGuide.layoutFrame.minX, y: self.view.safeAreaLayoutGuide.layoutFrame.minY)
@@ -100,6 +110,7 @@ class Task1VC: UIViewController {
                 self.burgerButton.isUserInteractionEnabled = false
             }, completion: {_ in
                 self.burgerView.removeFromSuperview()
+                self.blurView.removeFromSuperview()
                 self.burgerButton.isUserInteractionEnabled = true
             } )
         }

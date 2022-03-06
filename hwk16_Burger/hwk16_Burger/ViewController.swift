@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         button = UIButton.taskButton()
         view.addSubview(button)
     }
-    
+                          
     override func viewDidLoad() {
         super.viewDidLoad()
         button.addTarget(self, action: #selector(nextScreen), for: .touchUpInside)
